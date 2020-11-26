@@ -1,6 +1,6 @@
 ﻿namespace WebShop.Models
 {
-    public class PozycjeZamowienia
+    public class PozycjaZamowienia
     {
         public int PozycjaZamowieniaID { get; set; }
         public int ZamowienieID { get; set; }
