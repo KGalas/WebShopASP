@@ -1,0 +1,26 @@
+﻿namespace WebShop.Migrations
+{
+    using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
+    using WebShop.DAL;
+
+    public sealed class Configuration : DbMigrationsConfiguration<WebShop.DAL.KursyContext>
+    {
+        public Configuration()
+        {
+            AutomaticMigrationsEnabled = false;
+            ContextKey = "WebShop.DAL.KursyContext";
+        }
+
+        protected override void Seed(WebShop.DAL.KursyContext context)
+        {
+            KursyInitializer.SeedKursyData(context);
+            //  This method will be called after migrating to the latest version.
+
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
+            //  to avoid creating duplicate seed data.
+        }
+    }
+}

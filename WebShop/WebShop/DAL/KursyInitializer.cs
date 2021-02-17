@@ -1,21 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
+using WebShop.Migrations;
 using WebShop.Models;
 
 namespace WebShop.DAL
 {
-    public class KursyInitializer : DropCreateDatabaseAlways<KursyContext>
+    public class KursyInitializer : MigrateDatabaseToLatestVersion<KursyContext, Configuration>
     {
-        protected override void Seed(KursyContext context)
-        {
-            SeedKursyData(context);
-            base.Seed(context);
-        }
+        //protected override void Seed(KursyContext context)
+        //{
+        //    SeedKursyData(context);
+        //    base.Seed(context);
+        //}
 
-        private void SeedKursyData(KursyContext context)
+        public static void SeedKursyData(KursyContext context)
         {
             var kategorie = new List<Kategoria>()
             {
@@ -28,7 +30,7 @@ namespace WebShop.DAL
                 new Kategoria(){KategoriaID=7,NazwaKategorii="c#",NazwaPlikuIkony="c#.png",OpisKategorii="opis c#"}
             };
 
-            kategorie.ForEach(k => context.Kategorie.Add(k));
+            kategorie.ForEach(k => context.Kategorie.AddOrUpdate(k));
             context.SaveChanges();
 
             var kursy = new List<Kurs>()
@@ -144,6 +146,8 @@ namespace WebShop.DAL
                     OpisKursu = "Kurs C# - obiektowy język programowania zaprojektowany dla platformy .Net"
                 }
             };
+            kursy.ForEach(k => context.Kursy.AddOrUpdate(k));
+            context.SaveChanges();
         }
     }
 }

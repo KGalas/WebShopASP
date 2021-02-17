@@ -33,6 +33,8 @@ namespace WebShop.Models
         public bool BestSeller { get; set; }
 
         public bool Ukryty { get; set; }
+        public string OpisSkrocony { get; set; }
+
         public virtual Kategoria kategoria { get; set; }
     }
 }
