@@ -21,13 +21,13 @@ namespace WebShop.DAL
         {
             var kategorie = new List<Kategoria>()
             {
-                new Kategoria(){KategoriaID=1,NazwaKategorii="asp",NazwaPlikuIkony="asp.png",OpisKategorii="opis asp net mvc"},
-                new Kategoria(){KategoriaID=2,NazwaKategorii="java",NazwaPlikuIkony="java.png",OpisKategorii="opis java"},
-                new Kategoria(){KategoriaID=3,NazwaKategorii="php",NazwaPlikuIkony="php.png",OpisKategorii="opis php"},
-                new Kategoria(){KategoriaID=4,NazwaKategorii="html",NazwaPlikuIkony="html.png",OpisKategorii="opis html"},
-                new Kategoria(){KategoriaID=5,NazwaKategorii="css",NazwaPlikuIkony="css.png",OpisKategorii="opis css"},
-                new Kategoria(){KategoriaID=6,NazwaKategorii="xml",NazwaPlikuIkony="xml.png",OpisKategorii="opis xml"},
-                new Kategoria(){KategoriaID=7,NazwaKategorii="c#",NazwaPlikuIkony="c#.png",OpisKategorii="opis c#"}
+                new Kategoria(){KategoriaID=1,NazwaKategorii="ASP",NazwaPlikuIkony="aspnet.png",OpisKategorii="opis asp net mvc"},
+                new Kategoria(){KategoriaID=2,NazwaKategorii="C#",NazwaPlikuIkony="csharp.png",OpisKategorii="opis c#"},
+                new Kategoria(){KategoriaID=3,NazwaKategorii="CSS",NazwaPlikuIkony="css.png",OpisKategorii="opis css"},
+                new Kategoria(){KategoriaID=4,NazwaKategorii="HTML",NazwaPlikuIkony="html.png",OpisKategorii="opis html"},
+                new Kategoria(){KategoriaID=5,NazwaKategorii="Javascript",NazwaPlikuIkony="javascript.png",OpisKategorii="opis javascript"},
+                new Kategoria(){KategoriaID=6,NazwaKategorii="jQuery",NazwaPlikuIkony="jquery.png",OpisKategorii="opis jquery"},
+                new Kategoria(){KategoriaID=7,NazwaKategorii="XML",NazwaPlikuIkony="xml.png",OpisKategorii="opis XML"}
             };
 
             kategorie.ForEach(k => context.Kategorie.AddOrUpdate(k));
