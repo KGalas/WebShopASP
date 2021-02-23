@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WebShop.Models.Kurs>
+@using WebShop.Infrastructure
+ 
+<ul class="KursyTrzyKolumny MalaListaKategorii">
+    @foreach (var kurs in Model)
+    {
+        <li>
+            <article>
+                <a class="dodajDoKoszykaLink" href="@Url.Action("DodajDoKoszyka","Koszyk", new { id = kurs.KursID})">
+                    <img src="@Url.Content("~/Content/Images/koszyk.png")" />
+                </a>
+                @if (kurs.BestSeller)
+                {
+                <div class="bestsellerFlag"></div>
+                }
+                <a class="kursSzczegolyLink" href="@Url.Action("Szczegoly","KursyController", new { id = kurs.KursID })">
+                    <img class="kurs" src="@Url.ObrazkiSciezka(kurs.NazwaPlikuObrazka)" />
+                    <h1>
+                        @kurs.AutorKursu - @kurs.TytulKursu
+                    </h1>
+                </a>
+            </article>
+        </li>
+    }
+ </ul>

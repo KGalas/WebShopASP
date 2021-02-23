@@ -14,6 +14,6 @@ namespace WebShop.Models
         [Required(ErrorMessage = "Wprowadź opis kategorii")]
         public string OpisKategorii { get; set; }
         public string NazwaPlikuIkony { get; set; }
-        public virtual ICollection<Kurs> Kurs { get; set; }
+        public virtual ICollection<Kurs> Kursy { get; set; }
     }
 }

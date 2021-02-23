@@ -1,0 +1,16 @@
+﻿@model IEnumerable<WebShop.Models.Kategoria>
+@using WebShop.Infrastructure
+
+<nav class="KategorieVertical">
+    <ul>
+        @foreach (var kategorie in Model)
+        {
+        <li>
+            <a href="@Url.Action("Lista","Kursy", new {nazwaKategori = kategorie.NazwaKategorii.ToString() })"
+               style="background-image: url(@Url.IkonyKategoriiSciezka(kategorie.NazwaPlikuIkony)); ">
+                @kategorie.NazwaKategorii
+            </a>
+        </li>
+        }
+       </ul>
+</nav>
